@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc && nodemon --exec  ts-node Check.ts"
+    "dev": "tsc && nodemon --exec  ts-node Server.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "@types/express": "^5.0.3",
     "@types/node": "^24.2.0",
     "express": "^5.1.0",
+    "mongoose": "^8.17.0",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2"
   }
