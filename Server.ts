@@ -10,7 +10,7 @@ mongoose
   .connect("mongodb://localhost:27017/internsDB")
   .then(() => {
     console.log("Working DB");
-  })
+  })   
   .catch((err: any) => {
     console.log("An error occured", err.message);
   });
@@ -21,7 +21,7 @@ interface IUser {
   password: string;
 }
 
-const userSchema = new Schema<IUser>({
+const userSchema = new mongoose.Schema<IUser>({
   name: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
@@ -44,7 +44,7 @@ app.get("/users", async (req: Request, res: Response) => {
   }
 });
 
-app.get("/get:one/:id", async (req: Request, res: Response) => {
+app.get("/get-one/:id", async (req: Request, res: Response) => {
   try {
     // const {id = req.param}
     const getAUser = await User.findById(req.params.id);
@@ -144,5 +144,5 @@ app.delete("/delete-every", async (req: Request, res: Response) => {
 // });
 
 app.listen(port, () => {
-  console.log(`server is listening to http://localhost:${port}`);
+  console.log(`Server is listening to http://localhost:${port}`);
 });
